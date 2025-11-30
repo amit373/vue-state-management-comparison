@@ -1,0 +1,126 @@
+services:
+  props:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_NAME: props
+        PORT: 3001
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./apps/props:/app/apps/props
+      - ./packages:/app/packages
+    environment:
+      - NODE_ENV=development
+    command: sh -c "cd /app/apps/props && pnpm run dev"
+    stdin_open: true
+    tty: true
+
+  provide-inject:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_NAME: provide-inject
+        PORT: 3002
+    ports:
+      - "3002:3002"
+    volumes:
+      - ./apps/provide-inject:/app/apps/provide-inject
+      - ./packages:/app/packages
+    environment:
+      - NODE_ENV=development
+    command: sh -c "cd /app/apps/provide-inject && pnpm run dev"
+    stdin_open: true
+    tty: true
+
+  composables:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_NAME: composables
+        PORT: 3003
+    ports:
+      - "3003:3003"
+    volumes:
+      - ./apps/composables:/app/apps/composables
+      - ./packages:/app/packages
+    environment:
+      - NODE_ENV=development
+    command: sh -c "cd /app/apps/composables && pnpm run dev"
+    stdin_open: true
+    tty: true
+
+  pinia:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_NAME: pinia
+        PORT: 3004
+    ports:
+      - "3004:3004"
+    volumes:
+      - ./apps/pinia:/app/apps/pinia
+      - ./packages:/app/packages
+    environment:
+      - NODE_ENV=development
+    command: sh -c "cd /app/apps/pinia && pnpm run dev"
+    stdin_open: true
+    tty: true
+
+  vuex:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_NAME: vuex
+        PORT: 3005
+    ports:
+      - "3005:3005"
+    volumes:
+      - ./apps/vuex:/app/apps/vuex
+      - ./packages:/app/packages
+    environment:
+      - NODE_ENV=development
+    command: sh -c "cd /app/apps/vuex && pnpm run dev"
+    stdin_open: true
+    tty: true
+
+  rxjs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_NAME: rxjs
+        PORT: 3006
+    ports:
+      - "3006:3006"
+    volumes:
+      - ./apps/rxjs:/app/apps/rxjs
+      - ./packages:/app/packages
+    environment:
+      - NODE_ENV=development
+    command: sh -c "cd /app/apps/rxjs && pnpm run dev"
+    stdin_open: true
+    tty: true
+
+  custom-store:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_NAME: custom-store
+        PORT: 3007
+    ports:
+      - "3007:3007"
+    volumes:
+      - ./apps/custom-store:/app/apps/custom-store
+      - ./packages:/app/packages
+    environment:
+      - NODE_ENV=development
+    command: sh -c "cd /app/apps/custom-store && pnpm run dev"
+    stdin_open: true
+    tty: true

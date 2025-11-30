@@ -1,0 +1,21 @@
+{
+  "name": "@vue-state-lab/ui",
+  "version": "1.0.0",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "lint": "echo 'No linting for ui package'"
+  },
+  "dependencies": {
+    "@vue-state-lab/api": "*",
+    "@vue-state-lab/types": "*",
+    "vue": "^3.3.13"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  }
+}
+

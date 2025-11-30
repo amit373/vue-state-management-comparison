@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@vue-state-lab/types": ["../../packages/types/src"],
+      "@vue-state-lab/utils": ["../../packages/utils/src"],
+      "@vue-state-lab/api": ["../../packages/api/src"],
+      "@vue-state-lab/ui": ["../../packages/ui/src"]
+    },
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+
